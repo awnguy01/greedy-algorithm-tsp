@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    height: 1.5rem;
+  }
+}
+
+.file-upload-container {
+  display: flex;
+  justify-content: center;
+}
+
+.results-table-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.results-table {
+  width: 80vw;
+  tr {
+    border-bottom: 1px solid white;
+  }
+
+  tbody tr {
+    td:first-of-type {
+      width: 10rem;
+    }
+  }
+}

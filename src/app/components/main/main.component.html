@@ -1,0 +1,32 @@
+<div class="header">
+  <div class="file-upload-container">
+    <app-file-upload [formControl]="tspFileCtrl"></app-file-upload>
+  </div>
+  <button (click)="reset()" type="button">Reset</button>
+</div>
+<div class="results-table-container">
+  <table class="results-table">
+    <tr>
+      <th colspan="2">Results</th>
+    </tr>
+    <tr>
+      <td>Route:</td>
+      <td *ngIf="results | async as result; else emptyArray">[{{ mapListOfCityNames(result.currRoute) }}]</td>
+    </tr>
+    <tr>
+      <td>Add Order:</td>
+      <td *ngIf="results | async as result; else emptyArray">[{{ mapListOfCityNames(result.addOrder) }}]</td>
+    </tr>
+    <tr>
+      <td>Rem Cities:</td>
+      <td *ngIf="results | async as result; else emptyArray">[{{ mapListOfCityNames(result.remCities) }}]</td>
+    </tr>
+    <tr>
+      <td>Total Distance:</td>
+      <td *ngIf="results | async as result; else zeroValue">{{ result.totalDistance }}</td>
+    </tr>
+  </table>
+  <ng-template #emptyArray>[]</ng-template>
+  <ng-template #zeroValue>0</ng-template>
+</div>
+<div id="chartContainer"></div>
